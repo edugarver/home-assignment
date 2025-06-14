@@ -1,0 +1,30 @@
+# system files
+.DS_Store
+
+# dependencies
+node_modules
+package-lock.json
+.npmrc
+
+# outputs
+/.scannerwork
+/coverage
+/dist
+/junit/
+/sonar-scanner
+CHANGELOG.md
+
+# Log files
+debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

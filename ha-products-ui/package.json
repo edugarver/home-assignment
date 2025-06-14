@@ -1,0 +1,38 @@
+{
+  "name": "ha-products-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite --port 3000 --open",
+    "start:mock-api": "vite --mode dev --port 3000 --open",
+    "build": "vite build",
+    "prettier": "prettier --log-level warn . --write",
+    "lint": "eslint ./src --fix",
+    "lint:tsc": "vue-tsc --noEmit",
+    "preview": "vite preview",
+    "lint:ts": "vue-tsc -b"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.72",
+    "element-plus": "^2.9",
+    "ofetch": "^1.4",
+    "vue": "^3.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24",
+    "@tailwindcss/postcss": "^4.1",
+    "@vitejs/plugin-vue": "^5.2",
+    "@vue/tsconfig": "^0.7",
+    "eslint-plugin-vue": "^10.0",
+    "postcss": "^8.5",
+    "prettier": "^3.5",
+    "tailwindcss": "^4.1",
+    "typescript": "^5.8",
+    "typescript-eslint": "^8.29",
+    "unplugin-element-plus": "^0.9",
+    "vite": "^6.2",
+    "vite-plugin-mock": "^3.0",
+    "vue-tsc": "^2.2"
+  }
+}
