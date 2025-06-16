@@ -7,17 +7,21 @@ Tests are divided into three separate files, each representing a different funct
 - `listProducts.test.js` - Tests for listing products.
 - `searchProducts.test.js` - Tests for searching products.
 In addition, each test is tagged with different labels to categorize them into smoke, regression, and e2e tests, and an individual tag with their id for each test case.
-The automated test cases are the following ones:
-- `List all products @tc1 @smoke @regression`
-- `Create a product @tc2 @smoke @regression`
-- `Search for a product @tc3 @smoke @regression`
-
-
-
-## Installation
-Once you have cloned the parent repository, open this folder in your IDE and run the following command to install the necessary dependencies:
-```bash
-npm install
+One test is skipped due to time constraint limitations when it comes to finding a correct locator for the error messages (should use XPath locators).
+The automated test cases are the following ones
+```plain
+- List all products @tc1 @smoke @regression
+- Create a product @tc2 @smoke @regression
+- Search for a product @tc3 @smoke @regression
+- Add button is disabled when required fields are empty @tc4 @regression
+- Cancel button closes the dialog without adding a product @tc5 @regression
+- Search for a product with empty fields @tc6 @regression
+- Search with only manufacturer input @tc7 @regression
+- Search with only brand name input @tc8 @regression
+- Search with non-existing manufacturer @tc9 @regression
+- Search with non-existing brand name @tc10 @regression
+- Create a product and search for it on the list and by using the search functionality @tc11 @e2e
+- Max length for fields @tc12 @regression @skipped
 ```
 
 ## Project structure
@@ -28,28 +32,25 @@ npm install
 - `.env` - Configuration file where you can set the base URL for the Home Assignment UI project.
 - `allure-results/` - Directory where Allure test results are stored.
 
+## Prerequisites
+To run the tests, you need to have the following installed:
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
+- Playwright (installed as a dependency in this project)
+- Allure Commandline (for generating reports)
+- A running instance of the ha-products-ui project (the base URL should be set in the `.env` file)
+- A browser installed (the tests are set to run on Chrome by default, but you can configure it to run on other browsers as well)
+- Git (to clone the repository)
+- A code editor or IDE (like Visual Studio Code) to open and edit the project files
+
+## Installation
+Once you have cloned the parent repository, open this folder in your IDE and run the following command to install the necessary dependencies:
+```bash
+npm install
+```
+
 ## Configuration
 You must specify where the Home Assignment UI project is running. Modify the .env file and set the `BASE_URL` variable to the desired URL
-
-## Reporting
-By default, Playwright generates its HTML report that opens automatically if there is a failure in the tests. You can view it by running:
-```bash
-npx playwright show-report
-```
-You can also generate Allure reports for better visualization and analysis of test results.\
-How to use Allure reports:
-1. Install Allure CLI
-```bash
-npm install -g allure-commandline
-```
-2. Run the tests with Playwright to generate the Allure results
-```bash
-npx playwright test
-```
-3. Generate the Allure report
-```bash
-allure generate allure-results --clean
-```
 
 ## Running Tests
 ```bash
@@ -72,13 +73,27 @@ allure open
 - `npm run test:regression` - Runs regression tests.
 - `npm run test:e2e` - Runs e2e tests.
 
-## Possible improvements
-Due to the time constraints, the following improvements were not implemented, but they are worth considering:
-- Tests are divided into smoke, regression, and e2e, b
-- Tests are very verbose; I personally prefer to encapsulate all the interactions with the elements in a method, and then use that method in the tests, although this makes the classes less readable
-- For simplicity purposes, the tests only run on chrome, but it's possible to run them on other browsers as well
-- Improve allure annotations
-- Integrate framework with CI/CD
-- Fix tc12; I should locate the error messages in a different way (using xpath to assure that the error message appears below the correct input field)
+## Reporting
+By default, Playwright generates its HTML report that opens automatically if there is a failure in the tests. You can view it by running:
+```bash
+npx playwright show-report
+```
+You can also generate Allure reports for better visualization and analysis of test results.\
+How to use Allure reports:
+1. Install Allure CLI
+```bash
+npm install -g allure-commandline
+```
+2. Run the tests with Playwright to generate the Allure results
+```bash
+npx playwright test
+```
+3. Generate the Allure report
+```bash
+allure generate allure-results --clean
+```
 
-npx playwright test --grep @tc1
+## Notes
+- I personally prefer to encapsulate all the interactions with the elements in a dedicated method, and then use that method in the tests, although this makes the classes very large.
+- For simplicity purposes, the tests only run on chrome, but it's possible to run them on other browsers as well
+- Allure annotations are not used in the tests, but they can be added to provide more context and information about the test steps
