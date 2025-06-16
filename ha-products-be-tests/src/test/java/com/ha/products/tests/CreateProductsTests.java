@@ -63,7 +63,7 @@ public class CreateProductsTests extends BaseApiTest {
   @Tag("tc5")
   @Tag("regression")
   @Test
-  @Disabled("Disabled due to known issue with empty manufacturer")
+  @Disabled("Disabled due to being able to create a product with an empty manufacturer, which should not be allowed")
   @DisplayName("Create a product with an empty manufacturer")
   @Description("This test attempts to create a product with an empty manufacturer and expects a validation error.")
   public void createProductWithEmptyManufacturerTest() {
