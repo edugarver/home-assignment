@@ -4,6 +4,9 @@
 The application under test consists of both a backend layer and a frontend layer; as such, we will need to test both of these layers independently and in combination.\
 The purpose of this document is to identify the scope that our testing will have, as well as the different test plans and test cases that we should carry out.
 
+The API testing framework is located in [ha-products-be-tests](https://github.com/edugarver/home-assignment/tree/master/ha-products-be-tests)
+The UI testing framework is located in [ha-products-ui-tests](https://github.com/edugarver/home-assignment/tree/master/ha-products-ui-tests)
+
 ## Initial considerations
 - We will assume that the acceptance criteria given in the home assignment document is valid for both the frontend and backend parts
 - It is also assumed that both parts of the application are running, and that the UI is running on the backend project. If the UI is running on the provided mocked backend, the behavior differs in some points; for example, products are not immediately available after creation or there are differences in required fields.
