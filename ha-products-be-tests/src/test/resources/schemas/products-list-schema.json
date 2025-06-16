@@ -1,0 +1,23 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "applicationNumber": {
+        "type": "string"
+      },
+      "manufacturer": {
+        "type": ["string", "null"]
+      },
+      "substanceName": {
+        "type": "string"
+      },
+      "brandName": {
+        "type": ["string", "null"]
+      },
+      "productNumbers": {
+        "type": ["string", "null"]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "success": {
+      "type": "boolean"
+    },
+    "errorMessage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "applicationNumber": {
+      "type": "string"
+    }
+  }
+}
