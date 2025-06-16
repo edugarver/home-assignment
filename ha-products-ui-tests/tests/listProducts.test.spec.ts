@@ -106,6 +106,8 @@ test.describe("Products List Tests", () => {
     await listProductsPage.clickSearchButton();
     // Then "Products List" page is displayed
     await expect(page).toHaveTitle("HA Products");
+    // Hard wait to ensure the search results are loaded
+    await page.waitForTimeout(1000);
     // Then products with "Manufacturer" <manufacturer> are displayed in the table
     const products = await listProductsPage.getDisplayedProducts();
     expect(products).toEqual(
