@@ -97,3 +97,4 @@ allure generate allure-results --clean
 - I personally prefer to encapsulate all the interactions with the elements in a dedicated method, and then use that method in the tests, although this makes the classes very large.
 - For simplicity purposes, the tests only run on chrome, but it's possible to run them on other browsers as well
 - Allure annotations are not used in the tests, but they can be added to provide more context and information about the test steps
+- Playwright run in parallel by default, but it is disabled for data consistency purposes
